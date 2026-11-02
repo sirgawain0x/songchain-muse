@@ -694,6 +694,32 @@ main {
   left: -5%;
   top: -40%;
 }
+.performance-share-panel {
+  flex-basis: 100%;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fbfcf9;
+}
+.performance-share-panel > p:first-child {
+  margin-bottom: 8px;
+}
+.share-link-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 12px;
+}
+.share-link-row input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
 .vinyl {
   position: absolute;
   width: 290px;

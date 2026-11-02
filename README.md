@@ -18,6 +18,7 @@ The real Aeneid test license is token **73230**: [mint receipt](https://aeneid.d
 - Privy email/wallet login linked to stable accounts, invitation roles, free human voting and conflict-checked agent review assignments.
 - Real Muse Spark 1.2 feedback comparing full seed/remix analysis audio, with structured rationales, durations and a saved provider response ID. Administrators explicitly publish a filtered non-voting version.
 - Saved Muse Voice transcription, privately visible and copyable/downloadable by the artist and administrators.
+- Direct performance links with copy confirmation and native sharing where the browser supports it. Sharing does not cast a vote.
 - Aeneid seed/derivative registration and free test-license minting, with bounded sponsored gas, receipts and guarded retries.
 - A persistent notification inbox and opt-in background Web Push with generic lock-screen messages, deduplicated deliveries and a protected retry/deadline scan. [Notification setup](docs/notifications.md).
 

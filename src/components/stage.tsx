@@ -44,6 +44,7 @@ import { distribution, voteWindow, eventLifecycleLabel } from "@/lib/domain";
 import { PublicListeningPreview } from "./public-listening-preview";
 import { TranscriptPanel } from "./transcript-panel";
 import { NotificationCenter } from "./notification-center";
+import { SharePerformance } from "./share-performance";
 import {
   browseCategories,
   categoryForRuleset,
@@ -534,6 +535,12 @@ export default function Stage() {
                       <Vote size={16} />
                       {voteLabel(selected)}
                     </button>
+                    <SharePerformance
+                      key={selected.id}
+                      entryId={selected.id}
+                      title={selected.title}
+                      artist={selected.artist}
+                    />
                   </div>
                 </div>
               </div>
