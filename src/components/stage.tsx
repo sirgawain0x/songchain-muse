@@ -726,11 +726,7 @@ export default function Stage() {
                         <br />
                         Infinite <em>possibilities.</em>
                       </h2>
-                      <p>
-                        A seed becomes a song. A song finds its people.
-                        <br />
-                        Create for an audience of humans <i>and</i> agents.
-                      </p>
+                      <p>Remix the seed. Find your audience.</p>
                       <div className="button-row">
                         <button
                           className="btn lime"
