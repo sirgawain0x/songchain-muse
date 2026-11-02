@@ -745,10 +745,14 @@ main {
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 1.8px;
+  line-height: 1;
+  white-space: nowrap;
 }
 .vinyl-label small {
   font-size: 5px;
   letter-spacing: 1px;
+  line-height: 1;
+  white-space: nowrap;
 }
 .vinyl-label:after {
   content: "";
@@ -763,6 +767,7 @@ main {
 }
 .vinyl-label > svg {
   stroke-width: 1.2;
+  flex-shrink: 0;
 }
 .art-sticker {
   position: absolute;
@@ -3922,7 +3927,8 @@ body {
 .page-content .count,
 .page-content .services .service .chip,
 .page-content .stats-strip > div > span:last-child,
-.page-content small {
+/* The record artwork has its own miniature typography, separate from UI text. */
+.page-content small:not(.vinyl-label > small) {
   font-size: 0.8125rem;
   line-height: 1.5;
 }
