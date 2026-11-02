@@ -1,0 +1,19 @@
+# Local credentials, private uploads and operator state must never enter deployment source.
+.data/
+.env
+.env.*
+!.env.example
+**/*.pem
+**/*.key
+.git/
+.next/
+node_modules/
+.vercel/
+.codex/
+.agents/
+*.tsbuildinfo
+
+# One-time operators are retained locally, never run or shipped in routine releases.
+scripts/complete-story-pilot.ts
+scripts/relay-story-collection.ts
+scripts/reconcile-story-pilot.ts

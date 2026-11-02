@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, name text NOT NULL, role text NOT NULL CHECK(role IN ('fan','artist','admin','juror')));
+CREATE TABLE IF NOT EXISTS media (id text PRIMARY KEY, owner_id text NOT NULL REFERENCES users(id), document jsonb NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS events (id text PRIMARY KEY, document jsonb NOT NULL);
+CREATE TABLE IF NOT EXISTS entries (id text PRIMARY KEY, event_id text NOT NULL REFERENCES events(id), owner_id text NOT NULL REFERENCES users(id), document jsonb NOT NULL, UNIQUE(id,event_id), UNIQUE(event_id,owner_id));
+CREATE TABLE IF NOT EXISTS assistance (event_id text NOT NULL REFERENCES events(id), owner_id text NOT NULL, artist_id text NOT NULL REFERENCES users(id), agent_id text NOT NULL, PRIMARY KEY(event_id,owner_id,artist_id));
+CREATE TABLE IF NOT EXISTS votes (event_id text NOT NULL, entry_id text NOT NULL, owner_id text NOT NULL, lane text NOT NULL CHECK(lane IN ('human','agent')), created_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(event_id,owner_id,lane), FOREIGN KEY(entry_id,event_id) REFERENCES entries(id,event_id));
+CREATE TABLE IF NOT EXISTS scorecards (id text PRIMARY KEY, event_id text NOT NULL, entry_id text NOT NULL, owner_id text NOT NULL, document jsonb NOT NULL, UNIQUE(entry_id,owner_id), FOREIGN KEY(entry_id,event_id) REFERENCES entries(id,event_id));
+CREATE TABLE IF NOT EXISTS offerings (id text PRIMARY KEY, entry_id text NOT NULL REFERENCES entries(id), document jsonb NOT NULL);
+CREATE TABLE IF NOT EXISTS purchases (id text PRIMARY KEY, owner_id text NOT NULL REFERENCES users(id), offering_id text NOT NULL REFERENCES offerings(id), state text NOT NULL CHECK(state IN ('pending','submitted','confirmed','failed','needs-review')), document jsonb NOT NULL, UNIQUE(owner_id,offering_id));
+CREATE TABLE IF NOT EXISTS jobs (id text PRIMARY KEY, state text NOT NULL, document jsonb NOT NULL);
+CREATE TABLE IF NOT EXISTS auth_attempts (key text PRIMARY KEY, attempts integer NOT NULL DEFAULT 1, reset_at timestamptz NOT NULL);
+CREATE TABLE IF NOT EXISTS trace_outbox (id text PRIMARY KEY, document jsonb NOT NULL, state text NOT NULL DEFAULT 'pending');

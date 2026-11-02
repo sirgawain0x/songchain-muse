@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.env*
+!.env.example
+.vercel/
+.data/
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+.codex/
+.agents/
+scripts/complete-story-pilot.ts
+scripts/relay-story-collection.ts
+scripts/reconcile-story-pilot.ts
+*.tsbuildinfo
+.vercel
