@@ -6,7 +6,7 @@
   --line: #e4e7df;
   --lime: #e4f588;
   --dark: #242d29;
-  --sidebar: 238px;
+  --sidebar: 284px;
   --radius: 15px;
 }
 .assistant-box {
@@ -327,6 +327,10 @@ em {
   line-height: 1.9;
   position: relative;
   z-index: 1;
+}
+.sidebar-note p > span {
+  display: block;
+  white-space: nowrap;
 }
 .sidebar-note button {
   font-size: 10px;
@@ -2393,7 +2397,7 @@ textarea {
 }
 @media (min-width: 1500px) {
   :root {
-    --sidebar: 255px;
+    --sidebar: 284px;
   }
   .hero {
     min-height: 370px;
@@ -2448,7 +2452,7 @@ textarea {
 }
 @media (max-width: 1150px) {
   :root {
-    --sidebar: 210px;
+    --sidebar: 284px;
   }
   .sidebar {
     padding-left: 16px;
@@ -2588,7 +2592,7 @@ textarea {
 }
 @media (max-width: 900px) {
   :root {
-    --sidebar: 185px;
+    --sidebar: 284px;
   }
   .sidebar {
     padding: 28px 12px 88px;
@@ -2899,7 +2903,7 @@ textarea {
   }
   .sidebar {
     transform: translateX(-100%);
-    width: 230px;
+    width: 284px;
     transition: transform 0.25s;
     bottom: auto;
     height: 100vh;

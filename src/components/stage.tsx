@@ -341,8 +341,8 @@ export default function Stage() {
             starts with a seed.
           </h3>
           <p>
-            One voice. Your imagination.
-            <br />A whole new audience.
+            <span>One voice. Your imagination.</span>
+            <span>A whole new audience.</span>
           </p>
           <button onClick={() => go("studio")}>
             Create an entry <ArrowUpRight size={15} />
